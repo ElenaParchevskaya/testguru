@@ -11,8 +11,8 @@ Category.create([
 
 Test.create([
   {title: 'Деление чисел', level: 1, category_id: 1},
-  {title: 'Литература', level: 1, category_id: 1},
-  {title: 'IQ', level: 0, category_id: 2}
+  {title: 'Литература', level: 1, category_id: 2},
+  {title: 'Шуточные', level: 0, category_id: 3}
 ])
 
 Question.create([
@@ -31,4 +31,11 @@ Answer.create([
   {body: 'пуха', question_id: 3},
   {body: 'железа', question_id: 3},
   {body: 'равны', question_id: 3}
+])
+
+Result.create([
+  {user_id: 1, test_id: 1},
+  {user_id: 1, test_id: 2},
+  {user_id: 1, test_id: 3},
+  {user_id: 2, test_id: 3}
 ])
