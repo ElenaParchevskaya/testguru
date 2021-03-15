@@ -1,41 +1,41 @@
-User.create([
+user = User.create!([
   {name: 'Alena', email: 'parchi@pp.by', password: '314'},
   {name: 'Kate', email: 'bun@pp.by', password: '159'}
 ])
 
-Category.create([
+category = Category.create!([
   {title: 'Математика'},
   {title: 'Русский'},
   {title: 'Другое'}
 ])
 
-Test.create([
-  {title: 'Деление чисел', level: 1, category_id: 1},
-  {title: 'Литература', level: 1, category_id: 2},
-  {title: 'Шуточные', level: 0, category_id: 3}
+test = Test.create!([
+  {title: 'Деление чисел', level: 1, category_id: category[0].id}},
+  {title: 'Литература', level: 1, category_id: category[1].id},
+  {title: 'Шуточные', level: 0, category_id: category[2].id}
 ])
 
-Question.create([
-  {body: 'Число 4822x делится на 3 и не делится на 2. Какая цифра должна стоять вместо x?', test_id: 1},
-  {body: 'Укажи лишнее слово', test_id: 2},
-  {body: 'Что тяжелее 1 килограмм пуха или железа', test_id: 3},
+question = Question.create!([
+  {body: 'Число 4822x делится на 3 и не делится на 2. Какая цифра должна стоять вместо x?', test_id: test[0].id},
+  {body: 'Укажи лишнее слово', test_id: test[1].id},
+  {body: 'Что тяжелее 1 килограмм пуха или железа', test_id: test[2].id},
 ])
 
-Answer.create([
-  {body: '2', question_id: 1},
-  {body: '3', question_id: 1},
-  {body: '5', question_id: 1},
-  {body: 'стихотворение', question_id: 2},
-  {body: 'пословица', question_id: 2},
-  {body: 'песенка', question_id: 2},
-  {body: 'пуха', question_id: 3},
-  {body: 'железа', question_id: 3},
-  {body: 'равны', question_id: 3}
+answer = Answer.create!([
+  {body: '2', question_id: question[0].id},
+  {body: '3', question_id: question[0].id},
+  {body: '5', question_id: question[0].id},
+  {body: 'стихотворение', question_id: question[1].id},
+  {body: 'пословица', question_id: question[1].id},
+  {body: 'песенка', question_id: question[1].id},
+  {body: 'пуха', question_id: question[2].id},
+  {body: 'железа', question_id: question[2].id},
+  {body: 'равны', question_id: question[2].id}
 ])
 
 Result.create([
-  {user_id: 1, test_id: 1},
-  {user_id: 1, test_id: 2},
-  {user_id: 1, test_id: 3},
-  {user_id: 2, test_id: 3}
+  {user_id: user[0].id, test_id: test[0].id},
+  {user_id: user[0].id, test_id: test[1].id},
+  {user_id: user[0].id, test_id: test[2].id},
+  {user_id: user[1].id, test_id: test[2].id}
 ])
