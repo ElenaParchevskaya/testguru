@@ -1,4 +1,5 @@
 user = User.create!([
+  {name: 'Admin', email: 'adminka@admin.by', password: '123'}
   {name: 'Alena', email: 'parchi@pp.by', password: '314'},
   {name: 'Kate', email: 'bun@pp.by', password: '159'}
 ])
@@ -10,9 +11,9 @@ category = Category.create!([
 ])
 
 test = Test.create!([
-  {title: 'Деление чисел', level: 1, category_id: category[0].id}},
-  {title: 'Литература', level: 1, category_id: category[1].id},
-  {title: 'Шуточные', level: 0, category_id: category[2].id}
+  {title: 'Деление чисел', level: 1, category_id: category[0].id}, user_id: user[0].id},
+  {title: 'Литература', level: 1, category_id: category[1].id, user_id: user[0].id},
+  {title: 'Шуточные', level: 0, category_id: category[2].id, user_id: user[0].id}
 ])
 
 question = Question.create!([
@@ -34,8 +35,8 @@ answer = Answer.create!([
 ])
 
 Result.create([
-  {user_id: user[0].id, test_id: test[0].id},
-  {user_id: user[0].id, test_id: test[1].id},
-  {user_id: user[0].id, test_id: test[2].id},
-  {user_id: user[1].id, test_id: test[2].id}
+  {user_id: user[1].id, test_id: test[0].id},
+  {user_id: user[1].id, test_id: test[1].id},
+  {user_id: user[1].id, test_id: test[2].id},
+  {user_id: user[2].id, test_id: test[2].id}
 ])

@@ -52,9 +52,11 @@ ActiveRecord::Schema.define(version: 2021_03_15_085120) do
     t.text "title", null: false
     t.integer "level", default: 0
     t.bigint "category_id"
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_tests_on_category_id"
+    t.index ["user_id"], name: "index_tests_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
