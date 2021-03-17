@@ -22,7 +22,7 @@ question = Question.create!([
   {body: 'Что тяжелее 1 килограмм пуха или железа', test_id: test[2].id},
 ])
 
-answer = Answer.create!([
+Answer.create!([
   {body: '2', question_id: question[0].id},
   {body: '3', question_id: question[0].id},
   {body: '5', question_id: question[0].id},
