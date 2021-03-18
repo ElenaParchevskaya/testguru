@@ -8,7 +8,7 @@ class Test < ApplicationRecord
 
   def self.all_with_category(category)
     joins(:category)
-         .where("categories.title = :name", name: category)
+         .where(categories: {title: category})
          .order(title: :desc)
          .pluck(:title)
   end
