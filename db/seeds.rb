@@ -11,9 +11,9 @@ categories = Category.create!([
 ])
 
 tests = Test.create!([
-  {title: 'Деление чисел', level: 1, category: categories[0]}, user: users[0]},
-  {title: 'Литература', level: 1, category: categories[1], user: users[0]},
-  {title: 'Шуточные', level: 0, category: categories[2], user: users[0]}
+  {title: 'Деление чисел', level: 1, category: categories[0]}, authored_tests: users[0]},
+  {title: 'Литература', level: 1, category: categories[1], authored_tests: users[0]},
+  {title: 'Шуточные', level: 0, category: categories[2], authored_tests: users[0]}
 ])
 
 questions = Question.create!([
@@ -25,13 +25,13 @@ questions = Question.create!([
 Answer.create!([
   {body: '2', question: questions[0]},
   {body: '3', question: questions[0]},
-  {body: '5', question: questions[0]},
+  {body: '5', question: questions[0], correct: true},
   {body: 'стихотворение', question: questions[1]},
   {body: 'пословица', question: questions[1]},
-  {body: 'песенка', question: questions[1]},
+  {body: 'песенка', question: questions[1], correct: true},
   {body: 'пуха', question: questions[2]},
   {body: 'железа', question: questions[2]},
-  {body: 'равны', question: questions[2]}
+  {body: 'равны', question: questions[2], correct: true}
 ])
 
 Result.create([

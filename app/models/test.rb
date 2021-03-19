@@ -1,4 +1,14 @@
 class Test < ApplicationRecord
+  scope :easy, -> { where(level: 0..1) }
+  scope :medium, -> { where(level: 2..4) }
+  scope :hard, -> { where(level: 5..Float::INFINITY) }
+
+  scope :all_with_category, -> (category) {
+    joins(:category)
+     .where(categories: {title: category})
+     .order(title: :desc)
+  }
+
   belongs_to :category, optional: true
   belongs_to :authored_tests, class_name: 'User', foreign_key: 'user_id'
 
@@ -6,10 +16,13 @@ class Test < ApplicationRecord
   has_many :results
   has_many :users, through: :results
 
-  def self.all_with_category(category)
-    joins(:category)
-         .where(categories: {title: category})
-         .order(title: :desc)
-         .pluck(:title)
+  validates :title, presence: true,
+                    uniqueness: { scope: :level,
+                                  message: :uniq_title_with_level }
+  validates :level, numericality: { greater_than_or_equal_to: 0,
+                                    only_integer: true  }
+
+  def self.all_with_category_array(category)
+    all_with_category(category).pluck(:title)
   end
 end
