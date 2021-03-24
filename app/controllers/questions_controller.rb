@@ -9,15 +9,14 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    Question.find(params[:id])
   end
 
   def new
   end
 
   def create
-    question = @test.questions.new(question_params)
-    if question.save
+    @question = @test.questions.new(question_params)
+    if @question.save
       redirect_to test_questions_path
     else
       render plain: 'Что-то не так'
@@ -26,8 +25,10 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    redirect_to test_questions_path(@question.test.id)
+    redirect_to test_questions_path(@question.test)
   end
+
+  private
 
   def find_question
     @question = Question.find(params[:id])
