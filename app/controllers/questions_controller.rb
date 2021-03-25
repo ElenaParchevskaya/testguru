@@ -1,34 +1,46 @@
 class QuestionsController < ApplicationController
-  before_action :get_test, only: %i[index create]
-  before_action :find_question, only: %i[show destroy]
+  before_action :set_test, only: %i[index new]
+  before_action :find_question, only: %i[show edit update]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_quest_not_found
-
-  def index
-    @questions = @test.questions
-  end
 
   def show
   end
 
+  def edit
+  end
+
   def new
+    @question = Question.new
   end
 
   def create
     @question = @test.questions.new(question_params)
     if @question.save
-      redirect_to test_questions_path
+      redirect_to test_path(@test)
     else
-      render plain: 'Что-то не так'
+      render :new
+    end
+  end
+
+  def update
+    if @question.update(question_params)
+      redirect_to question_path(@question)
+    else
+      render :edit
     end
   end
 
   def destroy
     @question.destroy
-    redirect_to test_questions_path(@question.test)
+    redirect_to test_path(@question.test)
   end
 
   private
+
+  def set_test
+    @test = Test.find(params[:test_id])
+  end
 
   def find_question
     @question = Question.find(params[:id])
@@ -36,10 +48,6 @@ class QuestionsController < ApplicationController
 
   def question_params
     params.require(:question).permit(:body)
-  end
-
-  def get_test
-    @test = Test.find(params[:test_id])
   end
 
   def rescue_with_quest_not_found
