@@ -1,0 +1,12 @@
+// Place all the styles related to the questions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+form.question
+  display: flex
+  justify-content: center
+  flex-direction: column
+  input, textarea, label
+    margin: 20px auto
+  textarea
+    height: 150px
+    width: 200px
