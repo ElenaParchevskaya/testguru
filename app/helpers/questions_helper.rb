@@ -1,8 +1,0 @@
-module QuestionsHelper
-  HEADER = {'new' => 'Создать вопрос',
-             'edit' => 'Редактировать вопрос'}.freeze
-
-  def question_header(object)
-    object.new_record? ? "#{HEADER[:new]} #{@test.title}": "#{HEADER[:edit]} #{object.test.title}"
-  end
-end
