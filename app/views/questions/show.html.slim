@@ -1,4 +1,5 @@
 h3 = @question.body
+
 = link_to t('direction.back'), test_path(@question.test.id)
 br
 = link_to t('actions.edit'), edit_question_path(@question)
