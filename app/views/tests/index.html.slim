@@ -1,0 +1,11 @@
+h1 Тесты
+
+table.tests
+  thead
+    tr
+      th Названия тестов
+      th Кол-во вопросов
+  tbody
+    = render @tests
+
+= link_to t('actions.creates.test'), new_test_path

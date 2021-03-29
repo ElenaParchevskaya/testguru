@@ -20,5 +20,9 @@ module Testguru
     # config.eager_load_paths << Rails.root.join("extras")
     config.time_zone = "Minsk"
     config.i18n.default_locale = :ru
+
+    config.generators do |g|
+      g.template_engine :slim
+    end
   end
 end
