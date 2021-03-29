@@ -11,9 +11,9 @@ categories = Category.create!([
 ])
 
 tests = Test.create!([
-  { title: 'Деление чисел', level: 1, category: categories[0]}, authored_tests: users[0] },
-  { title: 'Литература', level: 1, category: categories[1], authored_tests: users[0] },
-  { title: 'Шуточные', level: 0, category: categories[2], authored_tests: users[0] }
+  { title: 'Деление чисел', level: 1, category: categories[0]}, author: users[0] },
+  { title: 'Литература', level: 1, category: categories[1], author: users[0] },
+  { title: 'Шуточные', level: 0, category: categories[2], author: users[0] }
 ])
 
 questions = Question.create!([
@@ -44,11 +44,4 @@ Answer.create!([
   { body: 'Орех', question: questions[5], correct: true },
   { body: 'Тыква', question: questions[5] },
   { body: 'Платье было в шкафу', question: questions[5] }
-])
-
-Result.create([
-  { user: users[1], test: tests[0] },
-  { user: users[1], test: tests[1] },
-  { user: users[1], test: tests[2] },
-  { user: users[2], test: tests[2] }
 ])
