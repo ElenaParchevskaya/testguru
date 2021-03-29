@@ -30,10 +30,10 @@ class TestPassage < ApplicationRecord
   private
 
   def correct_answers?(answer_ids)
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    correct_answers.ids.sort == answer_ids.map(&:to_i).sort if answer_ids.present?
   end
 
-  def current_answers
+  def correct_answers
     current_question.answers.correct
   end
 
