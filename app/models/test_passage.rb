@@ -5,6 +5,8 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: :create
 
+  SUCCES_PERCENTAGE = 85
+
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answers?(answer_ids)
     self.current_question = next_question
@@ -16,7 +18,7 @@ class TestPassage < ApplicationRecord
   end
 
   def success?
-    result >= 85
+    result >= SUCCES_PERCENTAGE
   end
 
   def result
