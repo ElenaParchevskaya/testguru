@@ -18,6 +18,6 @@ class Test < ApplicationRecord
   scope :all_with_category, -> (category){ joins(:category).where(categories: {title: category}) }
 
   def self.all_with_category_array(category)
-    all_with_category(category).order(title: :desc).pluck(:title)
+    all_with_category(category).pluck(:title)
   end
 end

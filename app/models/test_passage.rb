@@ -1,11 +1,11 @@
 class TestPassage < ApplicationRecord
+  SUCCES_PERCENTAGE = 85
+
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true, foreign_key: 'question_id'
 
   before_validation :before_validation_set_first_question, on: :create
-
-  SUCCES_PERCENTAGE = 85
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answers?(answer_ids)
