@@ -3,9 +3,7 @@ class TestPassagesController < ApplicationController
 
   def show; end
 
-  def result
-    render plain: 'END'
-  end
+  def result; end
 
   def update
     @test_passage.accept!(params[:answer_ids])

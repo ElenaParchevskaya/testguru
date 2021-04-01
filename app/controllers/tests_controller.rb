@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
   before_action :set_test, only: %i[start show edit update destroy]
-   before_action :set_user, only: :start
+  before_action :set_user, only: :start
 
   def index
     @tests = Test.all
@@ -37,7 +37,7 @@ class TestsController < ApplicationController
 
   def destroy
     @test.destroy
-    redirect_to tests_path
+      redirect_to tests_path
   end
 
   def start
