@@ -2,8 +2,10 @@ class User < ApplicationRecord
   has_many :authored_tests, class_name: 'Test'
   has_many :test_passages, dependent: :delete_all
   has_many :tests, through: :test_passages
-  
+
   validates :name, :email, presence: true
+  validates :email, uniqueness: true,
+                     format: /.+@.+\..+/i
 
   has_secure_password
 
