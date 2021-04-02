@@ -9,5 +9,8 @@ html[lang="ru"]
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    = yield
-    = render 'shared/footer'
+    .container
+      = render 'shared/header'
+      = render 'shared/flash', flash: flash
+      = yield
+      = render 'shared/footer'
