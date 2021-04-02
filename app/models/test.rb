@@ -3,8 +3,8 @@ class Test < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: 'user_id'
 
   has_many :questions, dependent: :destroy
-  has_many :results
-  has_many :users, through: :results
+  has_many :test_passages, dependent: :destroy
+  has_many :users, through: :test_passages
 
   validates :title, presence: true,
                     uniqueness: { scope: :level,
@@ -18,6 +18,6 @@ class Test < ApplicationRecord
   scope :all_with_category, -> (category){ joins(:category).where(categories: {title: category}) }
 
   def self.all_with_category_array(category)
-    all_with_category(category).order(title: :desc).pluck(:title)
+    all_with_category(category).pluck(:title)
   end
 end

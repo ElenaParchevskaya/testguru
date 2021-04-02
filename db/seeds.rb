@@ -1,5 +1,5 @@
-userы = User.create!([
-  { name: 'Admin', email: 'adminka@admin.by', password: '123' }
+users = User.create!([
+  { name: 'Admin', email: 'adminka@admin.by', password: '123' },
   { name: 'Alena', email: 'parchi@pp.by', password: '314' },
   { name: 'Kate', email: 'bun@pp.by', password: '159' }
 ])
@@ -11,9 +11,9 @@ categories = Category.create!([
 ])
 
 tests = Test.create!([
-  { title: 'Деление чисел', level: 1, category: categories[0]}, authored_tests: users[0] },
-  { title: 'Литература', level: 1, category: categories[1], authored_tests: users[0] },
-  { title: 'Шуточные', level: 0, category: categories[2], authored_tests: users[0] }
+  { title: 'Деление чисел', level: 1, category: categories[0], author: users[0] },
+  { title: 'Литература', level: 1, category: categories[1], author: users[0] },
+  { title: 'Шуточные', level: 0, category: categories[2], author: users[0] }
 ])
 
 questions = Question.create!([
@@ -21,7 +21,7 @@ questions = Question.create!([
   { body: 'Укажи лишнее слово', test: tests[1] },
   { body: 'Что тяжелее 1 килограмм пуха или железа', test: tests[2] },
   { body: "15 / 3 = 5. Что здесь является 'делителем'?", test: tests[0] },
-  { body: 'Имя богатыря из города Мурома?', test: tests[1] }
+  { body: 'Имя богатыря из города Мурома?', test: tests[1] },
   { body: 'Плод, в котором было спрятано платье Золушки?', test: tests[1] }
 ])
 
@@ -40,15 +40,8 @@ Answer.create!([
   { body: 'его тут нет', question: questions[3] },
   { body: 'Илья', question: questions[4], correct: true },
   { body: 'Иван', question: questions[4] },
-  { body: 'там не было богатырей', question: questions[4] }
+  { body: 'там не было богатырей', question: questions[4] },
   { body: 'Орех', question: questions[5], correct: true },
   { body: 'Тыква', question: questions[5] },
   { body: 'Платье было в шкафу', question: questions[5] }
-])
-
-Result.create([
-  { user: users[1], test: tests[0] },
-  { user: users[1], test: tests[1] },
-  { user: users[1], test: tests[2] },
-  { user: users[2], test: tests[2] }
 ])
