@@ -11,7 +11,6 @@ class User < ApplicationRecord
   has_many :test_passages, dependent: :delete_all
   has_many :tests, through: :test_passages
 
-  validates :name, :email, presence: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
 
   def current_test_with_level(level)

@@ -1,5 +1,4 @@
 users = User.create!([
-  { name: 'Admin', email: 'adminka@admin.by', password: '123' },
   { name: 'Alena', email: 'parchi@pp.by', password: '314' },
   { name: 'Kate', email: 'bun@pp.by', password: '159' }
 ])
