@@ -13,6 +13,10 @@ class User < ApplicationRecord
 
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
 
+  def admin?
+    is_a?(Admin)
+  end
+
   def current_test_with_level(level)
     tests.where(level: level)
   end
