@@ -1,8 +1,0 @@
-h3 = header_form(@test, 'test')
-
-  = form_with model: @test, local: true, class: 'action' do |form|
-    = render 'shared/form_errors', resource: @test
-    = form.label :title
-    = form.text_field :title
-    = form.collection_select :category_id, Category.all, :id, :title, promt: true
-    = form.submit

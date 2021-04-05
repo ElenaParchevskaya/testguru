@@ -1,0 +1,3 @@
+li
+  = link_to answer.body, admin_answer_path(answer)
+  = content_tag(:i, '', class: 'fa fa-check-square green') if answer.correct

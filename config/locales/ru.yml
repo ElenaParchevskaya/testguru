@@ -1,40 +1,62 @@
 ru:
-  welcome: 'Добро пожаловать %{name}'
+  category: Категория
+  level: Уровень
+  count_quests: Количество вопросов
+  start: Старт
+  result: Результат теста
+  result_test_true: Тест пройден. Результат %{count}% правильных ответов
+  result_test_false: Тест не пройден. Результат %{count}% правильных ответов
+  admin:
+    tests:
+      index:
+        header: Тесты
+        category: Категории
+        names: Названия тестов
+        count_quests: Кол-во вопросов
+  tests:
+    index:
+      header: Тесты
+      category: Категории
+      names: Названия тестов
+      count_quests: Количество вопросов
+  lesson_project: Учебный проект в онлайн-школе Thinknetica
+  answer: Ответ
+  question: Вопрос
+  test: Тест
+  welcome: Привет %{name}!
   signin: Авторизация
   signup: Регистрация
+  sign_with: Sign in with %{resource}
+  confirmation_instructions: Не получили инструкции по подтверждению?
+  repeat_send_instructions: Повторно отправить инструкции по разблокировке
+  unlock_instructions: Не получили инструкции по разблокировке?
+  repeat_current_password:  (Введите текущий пароль для подтверждения изменений)
+  leave_blank: (Оставьте пустым, если не хотите его менять)
+  cancel_account: Удалить учетную запись
+  remember_password: Забыл пароль?
+  confirm_new_password: Подтвердите новый пароль
+  new_password: Новый пароль
+  send_password_instructions: Отправить инструкцию по сбросу пароля
   exit: Выход
   auth_error: Почта или Пароль введены некорректно
   enter: Войти
-  authenticate: Успех прохождения теста выше, если Вы авторизированы. Китайская мудрасть.
+  authenticate: Успех прохождения теста выше, если Вы авторизированы.
   actions:
     edit: Изменить
     delete: Удалить
+    delete?: Вы уверены что хотите удалить %{model}
     update:
       test: Редактировать тест
       question: Редактировать вопрос
+      answer: Редактировать ответ
     creates:
-      test: Создать тест
-      question: Создать вопрос
-  direction:
-    back: Назад
-    forward: Вперед
-  school: Thinknetica
-  activerecord:
-    models:
-      question:
-        one: Вопрос
-        other: Вопросы
-    attributes:
-      question:
-        body: Название
-    errors:
-      messages:
-        record_invalid: 'Возникли ошибки: %{errors}'
-        max_answers: 'У одного Вопроса может быть от 1-го до 4-х ответов'
-        uniq_title_with_level: 'Может существовать только один Тест с данным названием и уровнем'
-        restrict_dependent_destroy:
-        has_one: 'Невозможно удалить запись, так как существует зависимость: %{record}'
-        has_many: 'Невозможно удалить запись, так как существуют зависимости: %{record}'
+      test: Создать новый тест
+      question: Создать новый вопрос
+      answer: Создать ответ
+    direction:
+      back: Назад
+      forward: Вперед
+    school: Thinknetica
   date:
     abbr_day_names:
       - Вс
@@ -294,3 +316,7 @@ ru:
       long: "%d %B %Y, %H:%M"
       short: "%d %b, %H:%M"
     pm: вечера
+  categories:
+    Mathematics: Математика
+    Russian: Русский
+    Others: Другое

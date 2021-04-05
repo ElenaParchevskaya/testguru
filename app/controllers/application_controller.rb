@@ -1,21 +1,24 @@
 class ApplicationController < ActionController::Base
-  
-  helper_method :current_user, :authenticate_user!, :logged_in?
+  protect_from_forgery with: :exception
 
-  private
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_locale
 
-  def authenticate_user!
-    unless current_user
-      cookies[:fullpath] = request.fullpath
-      redirect_to signin_path, alert: t('authenticate')
-    end
+  def default_url_options(options = {})
+    { lang: (I18n.locale if I18n.locale != I18n.default_locale) }
   end
 
-  def current_user
-    @_current_user ||= User.find_by(id: session[:current_user_id]) if session[:current_user_id]
+  protected
+
+  def after_sign_in_path_for(user)
+    user.admin? ? admin_tests_path : tests_path
   end
 
-  def logged_in?
-    current_user.present?
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:last_name, :first_name])
+  end
+
+  def set_locale
+    I18n.locale = I18n.locale_available?(params[:lang]) ? params[:lang] : I18n.default_locale
   end
 end

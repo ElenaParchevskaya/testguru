@@ -1,0 +1,12 @@
+h2 = t('.header')
+
+table.tests
+  thead
+    tr
+    th = t('.names')
+    th = t('.category')
+    th = t('.count_quests')
+  tbody
+    = render @tests
+
+= link_to t('actions.creates.test'), new_admin_test_path
