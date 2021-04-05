@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root 'tests#index'
 
-  devise_for :users, path: :gurus
+  devise_for :users, path: :gurus, controllers: { sessions: 'sessions' }
 
-  resources :tests do
+  resources :tests, only: :index do
     post :start, on: :member
   end
 
