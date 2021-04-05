@@ -1,4 +1,4 @@
-class Admin::AnswersController < ApplicationController
+class Admin::AnswersController < Admin::BaseController
   before_action :authenticate_user!
   before_action :answer_params, only: %i[create update]
   before_action :set_question,  only: %i[create new]
