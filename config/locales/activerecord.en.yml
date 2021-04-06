@@ -7,23 +7,38 @@ en:
       answer:
         one: Answer
         other: Answers
+      user: user
       test:
         one: Test
         other: Tests
       question:
         one: Question
         other: Questions
+
     attributes:
+      test:
+        title: Title test
+        level: Level test
+      user:
+        first_name: First name
+        last_name: Last name
+        email: Email
+        password: Password
+        remember_me: Remember me
+        password_confirmation: Password confirmation
+        current_password: Current password
       question:
         body: Body question
       answer:
         correct: Correct answer?
         body: Body answer
+        
     errors:
       messages:
-        record_invalid: 'Возникли ошибки: %{errors}'
-        max_answers: 'У одного Вопроса может быть от 1-го до 4-х ответов'
-        uniq_title_with_level: 'Может существовать только один Тест с данным названием и уровнем'
+        blank: 'can't be blank'
+        record_invalid: 'Errors occured: %{errors}'
+        max_answers: 'One question can have from 1 to 4 answers'
+        uniq_title_with_level: 'There can be only one Test with a given name and level'
         restrict_dependent_destroy:
-          has_one: 'Невозможно удалить запись, так как существует зависимость: %{record}'
-          has_many: 'Невозможно удалить запись, так как существуют зависимости: %{record}'
+          has_one: 'Unable to delete entry because a dependency exists: %{record}'
+          has_many: 'Unable to delete entry because dependencies exist: %{record}'

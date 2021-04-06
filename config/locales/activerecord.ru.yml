@@ -14,6 +14,7 @@ ru:
       question:
         one: Вопрос
         other: Вопросы
+
     attributes:
       test:
         title: Описание теста
@@ -31,8 +32,10 @@ ru:
       answer:
         correct: Верный ответ?
         body: Ответ
+        
     errors:
       messages:
+        blank: 'не может быть пустым'
         record_invalid: 'Возникли ошибки: %{errors}'
         max_answers: 'У одного Вопроса может быть от 1-го до 4-х ответов'
         uniq_title_with_level: 'Может существовать только один Тест с данным названием и уровнем'
