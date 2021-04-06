@@ -32,13 +32,13 @@ en:
       answer:
         correct: Correct answer?
         body: Body answer
-        
+
     errors:
       messages:
-        blank: 'can't be blank'
-        record_invalid: 'Errors occured: %{errors}'
-        max_answers: 'One question can have from 1 to 4 answers'
-        uniq_title_with_level: 'There can be only one Test with a given name and level'
+        blank: "can't be blank"
+        record_invalid: "Errors occured: %{errors}"
+        max_answers: "One question can have from 1 to 4 answers"
+        uniq_title_with_level: "There can be only one Test with a given name and level"
         restrict_dependent_destroy:
-          has_one: 'Unable to delete entry because a dependency exists: %{record}'
-          has_many: 'Unable to delete entry because dependencies exist: %{record}'
+          has_one: "Unable to delete entry because a dependency exists: %{record}"
+          has_many: "Unable to delete entry because dependencies exist: %{record}"
