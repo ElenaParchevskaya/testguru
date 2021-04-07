@@ -1,6 +1,4 @@
 class Admin::AnswersController < Admin::BaseController
-  before_action :authenticate_user!
-  before_action :answer_params, only: %i[create update]
   before_action :set_question,  only: %i[create new]
   before_action :set_answer,  only: %i[show destroy edit update]
 

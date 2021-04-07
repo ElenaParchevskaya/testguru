@@ -1,18 +1,21 @@
 ru:
   category: Категория
   level: Уровень
-  count_quests: Количество вопросов
+  count_questions: Количество вопросов
   start: Старт
   result: Результат теста
   result_test_true: Тест пройден. Результат %{count}% правильных ответов
   result_test_false: Тест не пройден. Результат %{count}% правильных ответов
+  answer: Ответ
+  question: Вопрос
+  test: Тест
   admin:
     tests:
       index:
         header: Тесты
         category: Категории
         names: Названия тестов
-        count_quests: Кол-во вопросов
+        count_quests: Количество вопросов
   tests:
     index:
       header: Тесты
@@ -20,9 +23,6 @@ ru:
       names: Названия тестов
       count_quests: Количество вопросов
   lesson_project: Учебный проект в онлайн-школе Thinknetica
-  answer: Ответ
-  question: Вопрос
-  test: Тест
   welcome: Привет %{name}!
   signin: Авторизация
   signup: Регистрация
@@ -57,6 +57,10 @@ ru:
       back: Назад
       forward: Вперед
     school: Thinknetica
+  categories:
+    Mathematics: Математика
+    Russian: Русский
+    Others: Другое
   date:
     abbr_day_names:
       - Вс
@@ -316,7 +320,3 @@ ru:
       long: "%d %B %Y, %H:%M"
       short: "%d %b, %H:%M"
     pm: вечера
-  categories:
-    Mathematics: Математика
-    Russian: Русский
-    Others: Другое
