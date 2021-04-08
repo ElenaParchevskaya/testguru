@@ -30,7 +30,7 @@ gem "font-awesome-rails"
 gem 'rails-i18n'
 
 # API
- gem 'faraday', '~> 0.15.4'
+ gem "octokit", "~> 4.0"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
