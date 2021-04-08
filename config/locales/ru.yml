@@ -1,4 +1,8 @@
 ru:
+  sevices:
+    gist:
+      description: Вопрос %{title} от TestGuru
+
   category: Категория
   level: Уровень
   count_questions: Количество вопросов
@@ -18,6 +22,11 @@ ru:
   question: Вопрос
 
   admin:
+    gists:
+      index:
+        user: Автор
+        question: Вопрос
+        url: Ссылка
     tests:
       index:
         header: Тесты
