@@ -9,14 +9,14 @@ en:
 
   test_passages:
     gist:
-      success: The test was created successfully
+      success: The gist was created successfully %{link_gist}
       failure: An error occurred while saving gist
     show:
       gist_create: Gist Question
 
   answer: Answer
   question: Question
-  test: Test
+
   admin:
     tests:
       index:
@@ -25,6 +25,7 @@ en:
         names: Name tests
         count_quests: Count questions
 
+  test: Test
   tests:
     index:
       header: Tests
@@ -274,7 +275,7 @@ en:
       last_word_connector: ", and "
       two_words_connector: " and "
       words_connector: ", "
-      
+
   time:
     am: am
     formats:

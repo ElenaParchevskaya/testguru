@@ -9,14 +9,14 @@ ru:
 
   test_passages:
     gist:
-      success: Тест успешно создан
+      success: gist успешно создан %{link_gist}
       failure: Во время сохранения gist произошла ошибка
     show:
       gist_create: Поделиться вопросом в Gist
 
   answer: Ответ
   question: Вопрос
-  test: Тест
+
   admin:
     tests:
       index:
@@ -25,6 +25,7 @@ ru:
         names: Названия тестов
         count_quests: Количество вопросов
 
+  test: Тест
   tests:
     index:
       header: Тесты
@@ -331,7 +332,7 @@ ru:
       last_word_connector: " и "
       two_words_connector: " и "
       words_connector: ", "
-      
+
   time:
     am: утра
     formats:
