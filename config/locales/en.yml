@@ -6,6 +6,14 @@ en:
   result: Result tests
   result_test_true: Test passed. Result %{count}% correct answers
   result_test_false: Test failed. Result %{count}% correct answers
+
+  test_passages:
+    gist:
+      success: The test was created successfully
+      failure: An error occurred while saving gist
+    show:
+      gist_create: Gist Question
+
   answer: Answer
   question: Question
   test: Test
@@ -15,13 +23,15 @@ en:
         header: Tests
         category: Categories
         names: Name tests
-        count_quests: Count questionsв
+        count_quests: Count questions
+
   tests:
     index:
       header: Tests
       category: Categories
       names: Name tests
       count_quests: Count questions
+
   lesson_project: Training project in the Thinknetica
   signin: Sign in
   signup: Sign up
@@ -40,6 +50,7 @@ en:
   auth_error: Mail or password entered incorrectly
   enter: Enter
   authenticate: The test success is higher if you are logged in.
+
   actions:
     edit: Edit
     delete: Delete
@@ -56,10 +67,12 @@ en:
       back: Back
       forward: Forward
     school: Thinknetica
+
   categories:
     mathematics: Mathematics
     russian: Russian
     others: Others
+
   date:
     abbr_day_names:
     - Sun
@@ -113,6 +126,7 @@ en:
     - :year
     - :month
     - :day
+
   datetime:
     distance_in_words:
       half_a_minute: "half a minute"
@@ -156,6 +170,7 @@ en:
       hour:   "Hour"
       minute: "Minute"
       second: "Seconds"
+
   errors:
     format: "%{attribute} %{message}"
     messages:
@@ -194,6 +209,7 @@ en:
       header:
         one: 1 error prohibited this %{model} from being saved
         other: "%{count} errors prohibited this %{model} from being saved"
+
   helpers:
     select:
       prompt: "Please select"
@@ -201,6 +217,7 @@ en:
       create: 'Create %{model}'
       update: 'Update %{model}'
       submit: 'Save %{model}'
+
   number:
     currency:
       format:
@@ -251,11 +268,13 @@ en:
     precision:
       format:
         delimiter: ''
+
   support:
     array:
       last_word_connector: ", and "
       two_words_connector: " and "
       words_connector: ", "
+      
   time:
     am: am
     formats:

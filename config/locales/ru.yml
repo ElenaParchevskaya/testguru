@@ -6,6 +6,14 @@ ru:
   result: Результат теста
   result_test_true: Тест пройден. Результат %{count}% правильных ответов
   result_test_false: Тест не пройден. Результат %{count}% правильных ответов
+
+  test_passages:
+    gist:
+      success: Тест успешно создан
+      failure: Во время сохранения gist произошла ошибка
+    show:
+      gist_create: Поделиться вопросом в Gist
+
   answer: Ответ
   question: Вопрос
   test: Тест
@@ -16,12 +24,14 @@ ru:
         category: Категории
         names: Названия тестов
         count_quests: Количество вопросов
+
   tests:
     index:
       header: Тесты
       category: Категории
       names: Названия тестов
       count_quests: Количество вопросов
+
   lesson_project: Учебный проект в онлайн-школе Thinknetica
   welcome: Привет %{name}!
   signin: Авторизация
@@ -41,6 +51,7 @@ ru:
   auth_error: Почта или Пароль введены некорректно
   enter: Войти
   authenticate: Успех прохождения теста выше, если Вы авторизированы.
+
   actions:
     edit: Изменить
     delete: Удалить
@@ -57,10 +68,12 @@ ru:
       back: Назад
       forward: Вперед
     school: Thinknetica
+
   categories:
     Mathematics: Математика
     Russian: Русский
     Others: Другое
+
   date:
     abbr_day_names:
       - Вс
@@ -113,6 +126,7 @@ ru:
       - :day
       - :month
       - :year
+
   datetime:
     distance_in_words:
       about_x_hours:
@@ -183,6 +197,7 @@ ru:
       month: Месяц
       second: Секунд
       year: Год
+
   errors:
     format: "%{attribute} %{message}"
     messages:
@@ -229,6 +244,7 @@ ru:
         many: "%{model}: сохранение не удалось из-за %{count} ошибок"
         one: "%{model}: сохранение не удалось из-за %{count} ошибки"
         other: "%{model}: сохранение не удалось из-за %{count} ошибки"
+
   helpers:
     select:
       prompt: 'Выберите: '
@@ -236,6 +252,7 @@ ru:
       create: Создать %{model}
       submit: Сохранить %{model}
       update: Сохранить %{model}
+
   number:
     currency:
       format:
@@ -308,11 +325,13 @@ ru:
     precision:
       format:
         delimiter: ''
+
   support:
     array:
       last_word_connector: " и "
       two_words_connector: " и "
       words_connector: ", "
+      
   time:
     am: утра
     formats:
