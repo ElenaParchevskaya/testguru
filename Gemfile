@@ -28,8 +28,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise', '~> 4.0'
 gem "font-awesome-rails"
 gem 'rails-i18n'
-gem 'bootstrap', '~> 4.2.1'
-gem 'jquery-rails'
+
+# API
+ gem 'faraday', '~> 0.15.4'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
