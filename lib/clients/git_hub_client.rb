@@ -1,23 +1,22 @@
-# frozen_string_literal: true
-
 class GitHubClient
-  ACCESS_TOKEN = ENV['TOKEN_GITHUB_GIST']
 
-  def initialize
-    @http_client = setup_http_client
-  end
+   attr_accessor :client
 
-  def create_gist(params)
-    @http_client.create_gist(params)
+   def initialize
+     @client = setup_github_client
    end
 
-   def get_gists
-     @http_client.user.rels[:gists].href
-  end
+   def create_gist(params)
+     client.create_gist(params)
+   end
 
-  private
+   def last_response_success?
+     client.last_response.status == 201
+   end
 
-  def setup_http_client
-    Octokit::Client.new(access_token: ACCESS_TOKEN)
-  end
-end
+   private
+
+   def setup_github_client
+     Octokit::Client.new(access_token:ENV['PERSONAL_GITHUB_ACCESS_TOKEN'])
+   end
+ end

@@ -1,16 +1,22 @@
 class GistQuestionService
+  attr_reader :client, :test, :question, :response
 
-  ResultObject = Struct.new(:success?, :html_url)
-
-  def initialize(question, client: http_client)
-    @client = client
+  def initialize(question, client: nil)
+    @client = client || GitHubClient.new
     @question = question
     @test = @question.test
   end
 
   def call
-    response = @client.create_gist(gist_params)
-    ResultObject.new(response.html_url.present?, response.html_url)
+    @response = client.create_gist(gist_params)
+  end
+
+  def success?
+    client.last_response_success?
+  end
+
+  def url_hash
+    response[:id]
   end
 
   private
