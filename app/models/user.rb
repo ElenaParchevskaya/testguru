@@ -1,28 +1,26 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable,
-         :registerable,
-         :recoverable,
-         :rememberable,
-         :validatable
-
-  has_many :authored_tests, class_name: 'Test'
-  has_many :test_passages, dependent: :delete_all
-  has_many :tests, through: :test_passages
-  has_many :gists, dependent: :destroy
-
-  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable,
+         :trackable, :confirmable
+  has_many :test_passages
+  has_many :passed_tests, through: :test_passages, source: :test
+  has_many :created_tests, class_name: 'Test'
+  def completed_tests(level)
+    passed_tests.where(level: level)
+  end
+  def test_passage(test)
+    test_passages.order(id: :desc).find_by(test_id: test.id)
+  end
 
   def admin?
     is_a?(Admin)
   end
 
-  def current_test_with_level(level)
-    tests.where(level: level)
-  end
-
-  def test_passage(test)
-    test_passages.order(id: :desc).find_by(test: test)
+  def full_name
+    if first_name && last_name
+      "#{first_name} #{last_name}"
+    else
+      'Stranger'
+    end
   end
 end

@@ -1,11 +1,7 @@
 class Category < ApplicationRecord
-  default_scope { order(:title) }
+  has_many :tests
 
-  has_many :tests, dependent: :nullify
+  default_scope { order(title: :asc) }
 
   validates :title, presence: true
-
-  def translated_title
-    I18n.t(title, scope: 'categories')
-  end
 end

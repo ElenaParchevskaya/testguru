@@ -2,10 +2,8 @@
 
 one:
   body: MyText
-  question_id: 1
   correct: false
 
 two:
   body: MyText
-  question_id: 1
   correct: false
