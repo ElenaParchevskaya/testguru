@@ -21,25 +21,15 @@ class GistQuestionService
 
   private
 
-  def http_client
-    Octokit::Client.new(access_token: ENV['TOKEN_GITHUB_GIST'])
+  def gist_params
+    { description: "#{I18n.t('.question_from')} #{test.title}",
+      public: true,
+      files: { 'test-guru-question.txt' => { content: gist_content } } }
   end
 
   def gist_content
     content = [@question.body]
     content += @question.answers.pluck(:body)
     content.join("\n")
-  end
-
-  def gist_params
-    {
-      'description': I18n.t('sevices.gist.description',title: @test.title),
-      'public': true,
-      'files': {
-        'test-guru-question.txt': {
-          content: gist_content
-        }
-      }
-    }
   end
 end
