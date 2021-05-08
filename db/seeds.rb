@@ -1,6 +1,6 @@
 users = User.create!([
-  { first_name: 'Alena', email: 'parchi1@pp.by', password: '314314' },
-  { first_name: 'Kate', email: 'bun1@pp.by', password: '159159' }
+  { username: 'Alena2', email: 'parchi2@pp.by', password: '314314' },
+  { username: 'Kate', email: 'bun1@pp.by', password: '159159' }
 ])
 
 categories = Category.create!([
@@ -10,9 +10,9 @@ categories = Category.create!([
 ])
 
 tests = Test.create!([
-  { title: 'Деление чисел', level: 1, category: categories[0], author: users[0] },
-  { title: 'Литература', level: 1, category: categories[1], author: users[0] },
-  { title: 'Шуточные', level: 0, category: categories[2], author: users[0] }
+  { title: 'Деление чисел', level: 2, category: categories[0], author: users[0] },
+  { title: 'Литература', level: 2, category: categories[1], author: users[1] },
+  { title: 'Шуточные', level: 1, category: categories[2], author: users[0] }
 ])
 
 questions = Question.create!([
