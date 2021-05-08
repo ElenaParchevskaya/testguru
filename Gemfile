@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '2.7.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3'
@@ -13,8 +13,6 @@ gem 'sass-rails', '>= 6'
 gem 'font-awesome-sass'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 5.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -27,14 +25,12 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise', '~> 4.0'
 gem "font-awesome-rails"
-gem 'rails-i18n'
+gem 'rails-i18n', '~> 6.0.0'
 gem 'bootstrap', '~> 4.2.1'
 gem 'jquery-rails'
 
 # API
  gem "octokit", "~> 4.0"
- gem 'dotenv-rails', groups: [:development, :test]
-
  gem 'octicons_helper'
 
 # Use Active Storage variant
@@ -46,6 +42,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry'
+  gem 'dotenv-rails'
 end
 
 group :development do
