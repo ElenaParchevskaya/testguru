@@ -1,21 +1,14 @@
 class Admin::TestsController < Admin::BaseController
-  before_action :set_test, only: %i[start show edit update destroy]
+  before_action :find_test, only: %i[show edit update destroy]
 
-  def index
-    @tests = Test.all
-  end
-
-  def show
-    @questions = @test.questions
-  end
+  def index; end
 
   def new
     @test = Test.new
   end
 
   def create
-    @test = current_user.authored_tests.new(test_params)
-
+    @test = current_user.created_tests.build(params_test)
     if @test.save
       redirect_to admin_tests_path
     else
@@ -23,11 +16,15 @@ class Admin::TestsController < Admin::BaseController
     end
   end
 
+  def show
+    @test_questions = @test.questions
+  end
+
   def edit; end
 
   def update
-    if @test.update(test_params)
-      redirect_to test_path(@test)
+    if @test.update(params_test)
+      redirect_to admin_tests_path
     else
       render :edit
     end
@@ -35,16 +32,16 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     @test.destroy
-      redirect_to admin_tests_path
+    redirect_to admin_tests_path
   end
 
   private
 
-  def test_params
-    params.require(:test).permit(:title, :category_id, :level)
+  def find_test
+    @test = Test.find(params[:id])
   end
 
-  def set_test
-    @test = Test.find(params[:id])
+  def params_test
+    params.require(:test).permit(:title, :level, :category_id)
   end
 end

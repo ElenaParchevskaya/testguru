@@ -2,15 +2,16 @@ class GistsController < ApplicationController
   before_action :set_test_passage
 
   def create
-    gist = GistQuestionService.new(@test_passage.current_question).call
+    gist = GistQuestionService.new(@test_passage.current_question)
+    gist.call
     if gist.success?
-      url = gist.url_hash
-     @gist = Gist.create(user: current_user, question: @test_passage.current_question, url: url)
-      flash.now[:notice] = t('.success', gist: helpers.link_to_gist(@gist))
+      gist_url = gist.url_hash
+      @gist = Gist.create(user_id: @test_passage.user_id, question_id: @test_passage.current_question.id, gist_url: gist_url)
+      flash.now[:notice] = t('.gist_success_html', gist: helpers.link_to_gist(@gist)).html_safe
     else
-      flash.now[:notice] = t('.failure')
+      flash.now[:notice] = t('.gist_fail')
     end
-     render '/test_passages/show'
+    render '/test_passages/show'
   end
 
   private
