@@ -1,4 +1,5 @@
-h2 = t('.header')
+h2
+= t('.header')
   = resource_name.to_s.humanize
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   = devise_error_messages!
@@ -6,10 +7,12 @@ h2 = t('.header')
     = f.label :first_name
     br
     = f.text_field :first_name, autofocus: true
+
   .field
     = f.label :last_name
     br
     = f.text_field :last_name, autofocus: true
+
   .field
     = f.label :email
     br
@@ -32,13 +35,15 @@ h2 = t('.header')
     = f.label :password_confirmation
     br
     = f.password_field :password_confirmation, autocomplete: "new-password"
+
   .field
     = f.label :current_password
     i = t('repeat_current_password')
     br
     = f.password_field :current_password, autocomplete: "current-password"
+
   .actions
     = f.submit
-  h3 = t('cancel_account')
+h3 = t('cancel_account')
 = button_to t('cancel_account'), registration_path(resource_name), data: { confirm: t('actions.delete?', model: resource.class.model_name.human) }, method: :delete
 = link_to t('direction.back'), :back

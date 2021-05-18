@@ -4,12 +4,15 @@ h2 = t('.header')
   .field
     = f.label :first_name
     = f.text_field :first_name, autofocus: true
+
   .field
     = f.label :last_name
     = f.text_field :last_name, autofocus: true
+
   .field
     = f.label :email
     = f.email_field :email, autofocus: true, autocomplete: "email"
+
   .field
     = f.label :password
     - if @minimum_password_length
@@ -18,10 +21,14 @@ h2 = t('.header')
         = @minimum_password_length
         |  characters minimum)
     = f.password_field :password, autocomplete: "new-password"
+
   .field
     = f.label :password_confirmation
-    br
     = f.password_field :password_confirmation, autocomplete: "new-password"
+
+  .field
+     = f.submit t("signup"), class: 'btn btn-success'
+
   .field
     = f.submit class: 'btn btn-success', disabled: true
     = render "devise/shared/links"

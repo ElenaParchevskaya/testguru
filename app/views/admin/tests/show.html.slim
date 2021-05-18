@@ -11,9 +11,8 @@ table.description
     tr
       th = t('count_quests')
       td = @test.questions.size
-
 ul
-= render @questions
+  = render @questions
 
 = link_to t('actions.update.test'), edit_admin_test_path
 br
