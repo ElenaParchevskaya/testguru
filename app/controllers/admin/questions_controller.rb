@@ -1,5 +1,5 @@
 class Admin::QuestionsController < Admin::BaseController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   before_action :set_test, only: %i[create new]
   before_action :set_question, only: %i[show destroy edit update]
 
@@ -15,9 +15,8 @@ class Admin::QuestionsController < Admin::BaseController
 
   def create
     @question = @test.questions.new(question_params)
-
     if @question.save
-      redirect_to admin_test_path(@test)
+      redirect_to admin_question_path(@question)
     else
       render :new
     end
