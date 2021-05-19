@@ -2,7 +2,7 @@ en:
   sevices:
     gist:
       description: A questions about %{title} from TestGuru
-      
+
   category: Category
   level: Level
   count_questions: Count questions
@@ -63,6 +63,7 @@ en:
 
   actions:
     edit: Edit
+    cancel: Cancel
     delete: Delete
     delete?: Are you sure you want to delete %{model}
     update:
@@ -182,6 +183,7 @@ en:
       second: "Seconds"
 
   errors:
+    header: Fail
     format: "%{attribute} %{message}"
     messages:
       accepted: must be accepted

@@ -64,6 +64,7 @@ ru:
 
   actions:
     edit: Изменить
+    cancel: Отмена
     delete: Удалить
     delete?: Вы уверены что хотите удалить %{model}
     update:
@@ -209,6 +210,7 @@ ru:
       year: Год
 
   errors:
+    header: Ошибка
     format: "%{attribute} %{message}"
     messages:
       accepted: нужно подтвердить

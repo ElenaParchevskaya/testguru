@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, path: :gurus, controllers: { sessions: 'sessions' }
 
   resources :tests, only: :index do
+    patch :update_inline, on: :member
     post :start, on: :member
   end
 
