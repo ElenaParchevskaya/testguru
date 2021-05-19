@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   devise_for :users, path: :gurus, controllers: { sessions: 'sessions' }
 
   resources :tests, only: :index do
-    patch :update_inline, on: :member
     post :start, on: :member
   end
 
@@ -17,6 +16,7 @@ Rails.application.routes.draw do
     resources :gists, only: :index
 
     resources :tests do
+      patch :update_inline, on: :member
       resources :questions, shallow: true, except: :index do
         resources :answers, shallow: true, except: :index
       end
