@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable,
          :registerable,
          :recoverable,
@@ -11,8 +9,6 @@ class User < ApplicationRecord
   has_many :test_passages, dependent: :delete_all
   has_many :tests, through: :test_passages
   has_many :gists, dependent: :destroy
-
-  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
 
   def admin?
     is_a?(Admin)
