@@ -4,6 +4,7 @@
 // that code so it'll be compiled.
 
 require("utilities/sorting")
+require("utilities/check_password_confirmation")
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
