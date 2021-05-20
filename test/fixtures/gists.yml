@@ -1,11 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user: one
-  question: one
-  url: MyString
-
-two:
-  user: two
-  question: two
-  url: MyString
+one: {}
+# column: value
+#
+two: {}
+# column: value
