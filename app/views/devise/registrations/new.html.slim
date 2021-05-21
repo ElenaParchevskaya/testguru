@@ -26,8 +26,8 @@ h2 = t('.header')
     = f.label :password_confirmation
     br
     = f.password_field :password_confirmation, autocomplete: "new-password"
-    = octicon 'check', class: 'text-success hide'
-    = octicon 'x', class: 'text-danger hide'
+    = octicon 'check-circle', class: 'text-success hide'
+    = octicon 'x-circle', class: 'text-danger hide'
   .field
     br
     = f.submit t("signup"), class: 'btn btn-success'
