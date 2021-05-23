@@ -1,55 +1,21 @@
 export default class SortingTable {
-  constructor(control) {
-    this.control = control;
-
-    this.setup();
-  }
-
-  sortRowsByTitle() {
-    const table = document.querySelector("table");
-
-    const rows = table.querySelectorAll("tr");
-
-    const sortedRows = [];
-
-    for (var i = 1; i < rows.length; i++) {
-      sortedRows.push(rows[i]);
+    constructor(table) {
+        table.addEventListener('click', this.sortRowsByTitle)
     }
 
-    let arrowUp = this.control.querySelector(".octicon-arrow-up");
-    let arrowDown = this.control.querySelector(".octicon-arrow-down");
+    sortRowsByTitle() {
+        const table = document.querySelector('table')
+        const sortedRows = Array.from(table.rows).slice(1)
 
-    if (arrowUp.classList.contains("hide")) {
-      sortedRows.sort((rowA, rowB) =>
-        rowA.cells[0].innerHTML > rowB.cells[0].innerHTML ? 1 : -1
-      );
-      arrowUp.classList.remove("hide");
-      arrowDown.classList.add("hide");
-    } else {
-      sortedRows.sort((rowA, rowB) =>
-        rowA.cells[0].innerHTML > rowB.cells[0].innerHTML ? -1 : 1
-      );
-      this.control
-        .querySelector(".octicon-arrow-down")
-        .classList.remove("hide");
-      arrowUp.classList.add("hide");
+        if (this.querySelector('.octicon-arrow-up').classList.contains('hide')) {
+            sortedRows.sort((rowA, rowB) => rowA.cells[0].innerHTML > rowB.cells[0].innerHTML ? 1 : -1)
+            this.querySelector('.octicon-arrow-up').classList.remove('hide')
+            this.querySelector('.octicon-arrow-down').classList.add('hide')
+        } else {
+            sortedRows.sort((rowA, rowB) => rowA.cells[0].innerHTML > rowB.cells[0].innerHTML ? -1 : 1)
+            this.querySelector('.octicon-arrow-up').classList.add('hide')
+            this.querySelector('.octicon-arrow-down').classList.remove('hide')
+        }
+        table.tBodies[0].append(...sortedRows)
     }
-
-    const sortedTable = document.createElement("table");
-
-    sortedTable.classList.add("table");
-    sortedTable.appendChild(rows[0]);
-
-    for (var i = 0; i < sortedRows.length; i++) {
-      sortedTable.appendChild(sortedRows[i]);
-    }
-
-    table.parentNode.replaceChild(sortedTable, table);
-  }
-
-  setup() {
-    this.control.addEventListener("click", (event) => {
-      this.sortRowsByTitle();
-    });
-  }
 }
