@@ -43,3 +43,5 @@ yarn-debug.log*
 .DS_Store?
 
 .env
+node_modules/.cache
+public/packs/js
