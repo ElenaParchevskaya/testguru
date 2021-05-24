@@ -2,7 +2,7 @@ en:
   sevices:
     gist:
       description: A questions about %{title} from TestGuru
-      
+
   category: Category
   level: Level
   count_questions: Count questions
