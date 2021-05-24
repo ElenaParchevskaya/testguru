@@ -30,6 +30,7 @@ gem "font-awesome-rails"
 gem 'rails-i18n'
 gem 'bootstrap', '~> 4.2.1'
 gem 'jquery-rails'
+gem 'octicons_helper'
 
 # API
  gem "octokit", "~> 4.0"

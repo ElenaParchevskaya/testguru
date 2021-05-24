@@ -1,10 +1,14 @@
 h1 = t('.header')
+p = link_to t('.new_test'), new_admin_test_path
 .row
   .col-12.col-md-8.offset-2
     table.table.table-hover.table-striped
       thead
         tr
-          th = t('.names')
+          th.sort-by-title.pointer
+            = t('.names')
+            = octicon 'arrow-up', class: 'text-success'
+            = octicon 'arrow-down', class: 'text-success'
           th = t('.category')
           th = t('.count_quests')
       tbody

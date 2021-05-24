@@ -4,7 +4,10 @@ h1 = t('.header')
     table.table.table-hover.table-striped
       thead
         tr.bg-primary
-          th = t('.names')
+          th.sort-by-title.pointer
+            = t('.names')
+            = octicon 'arrow-up', class: 'text-success'
+            = octicon 'arrow-down', class: 'text-success'
           th = t('.category')
           th = t('.count_quests')
           th

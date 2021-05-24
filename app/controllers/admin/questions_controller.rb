@@ -1,9 +1,6 @@
 class Admin::QuestionsController < Admin::BaseController
-  before_action :authenticate_user!
   before_action :set_test, only: %i[create new]
   before_action :set_question, only: %i[show destroy edit update]
-
-  # rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_quest_not_found
 
   def show; end
 
@@ -15,7 +12,6 @@ class Admin::QuestionsController < Admin::BaseController
 
   def create
     @question = @test.questions.new(question_params)
-
     if @question.save
       redirect_to admin_test_path(@test)
     else
@@ -49,8 +45,8 @@ class Admin::QuestionsController < Admin::BaseController
   def question_params
     params.require(:question).permit(:body)
   end
-
+  
   def rescue_with_quest_not_found
-    render plain: 'Запрос не найден'
+    render plain: 'Запрос не был найден'
   end
 end
