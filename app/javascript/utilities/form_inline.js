@@ -1,7 +1,7 @@
 document.addEventListener("turbolinks:load", function() {
   btnsEdit = document.getElementsByClassName('edit');
 
-  getEventClick = function(btn) {
+  const getEventClick = btn => {
     return btn.addEventListener('click', function() {
       return testInlineEdit(this);
     });
@@ -15,7 +15,7 @@ document.addEventListener("turbolinks:load", function() {
   }
 
   return testInlineEdit = function(btn) {
-    
+
     form = document.querySelectorAll("form[data-test-id='" + btn.dataset.testId + "']");
     if (btn.dataset.state === 'true') {
       form[0].style.display = 'none';
