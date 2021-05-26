@@ -13,6 +13,8 @@ import PasswordConfirmation from "utilities/show_passwords_match.js";
 window.PasswordConfirmation = PasswordConfirmation;
 import "utilities/sorting_connect.js";
 import "utilities/password_confirmation_connect.js";
+import "utilities/form_inline.js";
+import "utilities/progress_bar.js";
 
 Rails.start();
 Turbolinks.start();
