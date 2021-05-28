@@ -7,19 +7,21 @@ Rails.application.routes.draw do
     post :start, on: :member
   end
 
-   resources :test_passages, only: %i[show update] do
-     get :result, on: :member
-     post :gist, on: :member
-   end
+  resources :test_passages, only: %i[show update] do
+    get :result, on: :member
+    post :gist, on: :member
+  end
 
-   namespace :admin do
-     resources :gists, only: :index
+  resources :feedbacks, only: %i[index new create]
 
-     resources :tests do
-       patch :update_inline, on: :member
+  namespace :admin do
+    resources :gists, only: :index
 
-       resources :questions, shallow: true, except: :index do
-         resources :answers, shallow: true, except: :index
+    resources :tests do
+      patch :update_inline, on: :member
+
+      resources :questions, shallow: true, except: :index do
+        resources :answers, shallow: true, except: :index
       end
     end
   end

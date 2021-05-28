@@ -1,4 +1,5 @@
 en:
+  test_complited: TestGuru. You have completed the test %{test}
   sevices:
     gist:
       description: A questions about %{title} from TestGuru
@@ -182,6 +183,17 @@ en:
       second: "Seconds"
 
   errors:
+    feedbacks:
+      index:
+        header: Feedback
+        send_message: Send message
+      new:
+        header: Create message
+      form:
+        submit: Send
+      create:
+        msg_send: The message is sent
+
     format: "%{attribute} %{message}"
     messages:
       accepted: must be accepted
