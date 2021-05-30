@@ -10,4 +10,4 @@ module TestPassagesHelper
   def progresbar(current_question, count_question)
     current_question * 100 / count_question
   end
- end
+end

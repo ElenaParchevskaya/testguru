@@ -45,7 +45,7 @@ class Admin::QuestionsController < Admin::BaseController
   def question_params
     params.require(:question).permit(:body)
   end
-  
+
   def rescue_with_quest_not_found
     render plain: 'Запрос не был найден'
   end
