@@ -15,7 +15,6 @@ en:
   feedbacks:
     index:
       header: Feedback
-        send_message: Send message
     new:
       header: Create message
     form:
