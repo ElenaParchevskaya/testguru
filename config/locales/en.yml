@@ -11,6 +11,17 @@ en:
   result_test_true: Test passed. Result %{count}% correct answers
   result_test_false: Test failed. Result %{count}% correct answers
 
+  feedbacks:
+    index:
+      header: Feedback
+        send_message: Send message
+    new:
+      header: Create message
+    form:
+      submit: Send
+    create:
+      msg_send: The message is sent
+
   test_passages:
     gist:
       success: The gist was created successfully %{link_gist}
