@@ -1,4 +1,5 @@
 ru:
+  test_complited: TestGuru. Вы завершили тест %{test}
   sevices:
     gist:
       description: Вопрос %{title} от TestGuru
