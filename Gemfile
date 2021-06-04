@@ -31,10 +31,11 @@ gem 'rails-i18n'
 gem 'bootstrap', '~> 4.2.1'
 gem 'jquery-rails'
 gem 'octicons_helper'
+gem 'slim-rails'
 
 # API
- gem "octokit", "~> 4.0"
- gem 'dotenv-rails', groups: [:development, :test]
+gem "octokit", "~> 4.0"
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -57,7 +58,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'slim-rails'
   gem 'letter_opener'
 end
 

@@ -28,7 +28,7 @@ h2 = t('.header')
     = f.password_field :password_confirmation, autocomplete: "new-password"
     = octicon 'check-circle', class: 'text-success hide'
     = octicon 'x-circle', class: 'text-danger hide'
-  .field
+  .actions
     br
-    = f.submit t("signup"), class: 'btn btn-success'
-= render "devise/shared/links"
+    = f.submit class: 'btn btn-success'
+  = render "devise/shared/links"
