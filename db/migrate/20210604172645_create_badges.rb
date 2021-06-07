@@ -1,9 +1,11 @@
 class CreateBadges < ActiveRecord::Migration[6.1]
   def change
     create_table :badges do |t|
-      t.string :name
-      t.string :description
+      t.string :name, null: false
+      t.string :description, null: false
       t.string :image
+      t.string :badge_type, null: false
+      t.string :option
 
       t.timestamps
     end
