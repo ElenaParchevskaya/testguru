@@ -20,7 +20,27 @@ class Admin::BadgesController < Admin::BaseController
 
   def edit; end
 
-  def update; end
+  def update
+    if @badge.update(badge_params)
+      redirect_to admin_badges_path
+    else
+      render :edit
+    end
+  end
 
-  def destroy; end
+  def destroy
+    @badge.destroy
+    redirect_to admin_badges_path
+  end
+
+  private
+
+  def set_badge
+    @badge = Badge.find(params[:id])
+  end
+
+  def badge_params
+    params.require(:badge).permit(:name, :description, :image, :badge_type)
+  end
+
 end
