@@ -25,8 +25,8 @@ class TestPassagesController < ApplicationController
        assign_badge
        TestPassageComplitedMailer.test_complited(@test_passage).deliver_now
        redirect_to result_test_passage_path(@test_passage)
-     else
-       render :show
+    else
+      render :show
     end
   end
 
@@ -39,7 +39,7 @@ class TestPassagesController < ApplicationController
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
   end
-
+  
   def assign_badge
     badges = BadgeService.new(@test_passage).call
     unless badges.empty?

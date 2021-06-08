@@ -46,7 +46,7 @@ en:
         madness: Failed tes N count
         category: Take all tests by category
         level: Take all tests by level
-        
+
     gists:
       index:
         user: Author
