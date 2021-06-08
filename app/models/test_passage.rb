@@ -7,6 +7,8 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: :create
 
+  scope :successful, -> { where('score >= ?', SUCCES_PERCENTAGE) }
+
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answers?(answer_ids)
     self.current_question = next_question
@@ -18,16 +20,19 @@ class TestPassage < ApplicationRecord
   end
 
   def success?
-    result >= SUCCES_PERCENTAGE
+    score >= SUCCES_PERCENTAGE
   end
 
-  def calculate_result
-    self.result = correct_questions * 100.0 / test.questions.size if completed?
-    save!
+  def result
+    correct_questions * 100.0 / test.questions.size if completed?
   end
 
   def current_question_number
     test.questions.order(:id).where('id < ?', current_question.id).size + 1
+  end
+
+  def cache_result
+    update!(score: result)
   end
 
   private
