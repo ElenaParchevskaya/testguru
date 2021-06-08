@@ -21,8 +21,9 @@ class TestPassage < ApplicationRecord
     result >= SUCCES_PERCENTAGE
   end
 
-  def result
-    correct_questions * 100.0 / test.questions.size if completed?
+  def calculate_result
+    self.result = correct_questions * 100.0 / test.questions.size if completed?
+    save!
   end
 
   def current_question_number
