@@ -39,7 +39,7 @@ class TestPassagesController < ApplicationController
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
   end
-  
+
   def assign_badge
     badges = BadgeService.new(@test_passage).call
     unless badges.empty?
