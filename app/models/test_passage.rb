@@ -7,7 +7,10 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: :create
 
+  scope :successful, -> { where('score >= ?', SUCCES_PERCENTAGE) }
+
   def accept!(answer_ids)
+
     self.correct_questions += 1 if correct_answers?(answer_ids)
     self.current_question = next_question
     save!
@@ -18,7 +21,7 @@ class TestPassage < ApplicationRecord
   end
 
   def success?
-    result >= SUCCES_PERCENTAGE
+    score >= SUCCES_PERCENTAGE
   end
 
   def result
@@ -29,10 +32,14 @@ class TestPassage < ApplicationRecord
     test.questions.order(:id).where('id < ?', current_question.id).size + 1
   end
 
+  def cache_result
+    update!(score: result)
+  end
+
   private
 
   def correct_answers?(answer_ids)
-    correct_answers.ids.sort == answer_ids&.map(&:to_i)&.sort
+    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
   end
 
   def correct_answers

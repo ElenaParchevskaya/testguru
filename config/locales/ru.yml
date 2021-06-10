@@ -1,4 +1,10 @@
 ru:
+  badge: Достижения
+  earned_badge: Поздравляем!!!! Вы заработали достижение.
+  the_first_time?: Пройти тест с первого раза
+  god?: Получить все достижения
+  category?: Пройти все тесты по категории
+  passed_tests_of_level?: Пройти все тесты по уровню
   test_complited: TestGuru. Вы завершили тест %{test}
   sevices:
     gist:
@@ -11,6 +17,12 @@ ru:
   result: Результат теста
   result_test_true: Тест пройден. Результат %{count}% правильных ответов
   result_test_false: Тест не пройден. Результат %{count}% правильных ответов
+
+  badges:
+    index:
+      header: Ваши достижения
+      miss_badge: Осталось заработать
+      description: Описание
 
   feedbacks:
     index:
@@ -34,6 +46,11 @@ ru:
   question: Вопрос
 
   admin:
+    badges:
+      index:
+        header: Достижения
+        description: Описание
+        create: Создать
     gists:
       index:
         user: Автор

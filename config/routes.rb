@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   devise_for :users, path: :gurus, controllers: { sessions: 'sessions' }
 
+  resources :badges, only: :index
+
   resources :tests, only: :index do
     post :start, on: :member
   end
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :gists, only: :index
+    resources :badges
 
     resources :tests do
       patch :update_inline, on: :member

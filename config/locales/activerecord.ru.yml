@@ -18,6 +18,7 @@ ru:
     attributes:
       test:
         title: Описание теста
+        category_id: Категория
         level: Уровень
       user:
         first_name: Имя

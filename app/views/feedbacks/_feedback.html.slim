@@ -1,8 +1,8 @@
 li
-= link_to feedback.title, "#collapse#{feedback.id}", data: {toggle: 'collapse'},
-                                       role: 'button',
-                                       aria: {expanded: 'false', controls: 'collapseExample'}
+  = link_to feedback.title, "#collapse#{feedback.id}", data: {toggle: 'collapse'},
+                                         role: 'button',
+                                         aria: {expanded: 'false', controls: 'collapse'}
 
-.collapse[id="collapse#{feedback.id}"]
-  .card.card-body
-    = feedback.body
+  .collapse[id="collapse#{feedback.id}"]
+    .card.card-body
+      = feedback.body

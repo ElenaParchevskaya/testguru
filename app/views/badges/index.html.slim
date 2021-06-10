@@ -1,0 +1,20 @@
+h2 = t('.header')
+.row
+  .col-12.col-md-9.offset-2
+    table.table.table-hover.table-striped
+      thead
+        tr
+          th
+          th = t('.description')
+      tbody
+        = render partial: 'current_badges', collection: @current_badges, as: :badge
+
+h4 = t('.miss_badge')
+.row
+  .col-12.col-md-9.offset-2
+    table.table.table-hover.table-striped
+      thead
+        tr
+          th = t('.description')
+      tbody
+        = render @badges
