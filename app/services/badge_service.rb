@@ -20,10 +20,6 @@ class BadgeService
     test_ids.size == count_tests_success(test_ids)
   end
 
-  def madness?(count)
-    @current_test_passages.none?(&:success?) && @current_test_passages.count == count.to_i
-  end
-
   def god?(_params)
     Badge.count == @user.badges.uniq.size
   end

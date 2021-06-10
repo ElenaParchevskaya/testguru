@@ -3,7 +3,6 @@ ru:
   earned_badge: Поздравляем!!!! Вы заработали достижение.
   the_first_time?: Пройти тест с первого раза
   god?: Получить все достижения
-  madness?: Завалить тест N раз
   category?: Пройти все тесты по категории
   passed_tests_of_level?: Пройти все тесты по уровню
   test_complited: TestGuru. Вы завершили тест %{test}
