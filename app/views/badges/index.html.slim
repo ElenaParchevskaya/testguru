@@ -1,4 +1,4 @@
-h1 = t('.header')
+h2 = t('.header')
 .row
   .col-12.col-md-9.offset-2
     table.table.table-hover.table-striped
@@ -9,7 +9,7 @@ h1 = t('.header')
       tbody
         = render partial: 'current_badges', collection: @current_badges, as: :badge
 
-h3 = t('.miss_badge')
+h4 = t('.miss_badge')
 .row
   .col-12.col-md-9.offset-2
     table.table.table-hover.table-striped
@@ -18,4 +18,3 @@ h3 = t('.miss_badge')
           th = t('.description')
       tbody
         = render @badges
-= link_to t('.create'), new_admin_badge_path, class: 'btn btn-success'

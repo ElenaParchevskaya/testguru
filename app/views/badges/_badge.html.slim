@@ -1,9 +1,5 @@
 tr
+  td = image_tag badge.image, class: 'badge_image'
   td
-    = link_to badge.name, "#collapse#{badge.id}", data: { toggle: 'collapse' },
-                                            role: 'button',
-                                            aria: { expanded: 'false', controls: "collapse" }
-    .collapse[id="collapse#{badge.id}"]
-      .card.card-body.collapse_card
-        = image_tag badge.image, class: 'badge_image'
-        = badge.description
+    h5 = badge.name
+    p = badge.description
