@@ -1,6 +1,6 @@
 tr
   td.tests__name
-    = content_tag :span, test.title, class: 'test-title', data: { test_id: test.id}
+    = link_to test.title, admin_test_path(test)
     = render 'form_inline', test: test == @test ? @test : test
   td = t("categories.#{test.category.title}")
   td.tests__count = test.questions.size
