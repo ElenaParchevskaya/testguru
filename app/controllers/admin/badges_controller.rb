@@ -1,47 +1,49 @@
 class Admin::BadgesController < Admin::BaseController
-   before_action :find_badge, only: %i[edit update destroy]
+  before_action :find_badge, only: %i[show edit update destroy]
 
-   def index
-     @badges = Badge.all
-   end
+  def index
+    @badges = Badge.all
+  end
 
-   def new
-     @badge = Badge.new
-   end
+  def show; end
 
-   def create
-     @badge = Badge.new(badge_params)
+  def new
+    @badge = Badge.new
+  end
 
-     if @badge.save
-       redirect_to [:admin, @badge]
-     else
-       render :new
-     end
-   end
+  def create
+    @badge = Badge.new(badge_params)
 
-   def edit; end
+    if @badge.save
+      redirect_to [:admin, @badge]
+    else
+      render :new
+    end
+  end
 
-   def update
-     if @badge.update(badge_params)
-       redirect_to admin_badges_path
-     else
-       render :edit
-     end
-   end
+  def edit; end
 
-   def destroy
-     @badge.destroy
+  def update
+    if @badge.update(badge_params)
+      redirect_to admin_badges_path
+    else
+      render :edit
+    end
+  end
 
-     redirect_to admin_badges_path
-   end
+  def destroy
+    @badge.destroy
 
-   private
+    redirect_to admin_badges_path
+  end
 
-   def badge_params
-     params.require(:badge).permit(:name, :image_link, :rule_type, :rule_value)
-   end
+  private
 
-   def find_badge
-     @badge = Badge.find(params[:id])
-   end
- end
+  def badge_params
+    params.require(:badge).permit(:name, :image_link, :rule_type, :rule_value)
+  end
+
+  def find_badge
+    @badge = Badge.find(params[:id])
+  end
+end

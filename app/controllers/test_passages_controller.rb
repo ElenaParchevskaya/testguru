@@ -24,10 +24,6 @@ class TestPassagesController < ApplicationController
        TestPassageComplitedMailer.test_complited(@test_passage).deliver_now
        @test_passage.mark_as_passed
        BadgeDepartmentService.new(@test_passage).call
-        unless badges.empty?
-         current_user.badges << badges
-         flash[:notice] = I18n.t('earned_badge')
-       end
        redirect_to result_test_passage_path(@test_passage)
      else
        render :show
