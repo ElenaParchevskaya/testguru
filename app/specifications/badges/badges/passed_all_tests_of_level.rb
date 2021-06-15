@@ -17,4 +17,4 @@ module Badges
         .uniq
     end
   end
-end 
+end
