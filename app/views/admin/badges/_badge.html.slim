@@ -1,7 +1,8 @@
 tr
    td = image_tag badge.image_link, class: 'badge_image'
    td
-     p = badge.name
+     h5 = badge.name
+     p = badge.description
    th = link_to t('actions.edit'), edit_admin_badge_path(badge),
                                    class: 'btn btn-info'
    th = link_to t('actions.delete'), admin_badge_path(badge),
