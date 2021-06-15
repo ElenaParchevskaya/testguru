@@ -22,7 +22,7 @@ class TestPassage < ApplicationRecord
   end
 
   def mark_as_passed
-    if success
+    if success?
       update(passed: true)
     else
       update(passed: false)
