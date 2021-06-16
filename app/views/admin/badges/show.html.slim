@@ -1,0 +1,24 @@
+h1 = @badge.name
+.row
+.col-12.col-md-9.offset-2
+  = render 'shared/form_errors', resource: @badge
+  table.table.table-hover.table-striped
+    tbody
+    tr
+      th = t('name')
+      td = @badge.name
+    tr
+      th = t('image_link')
+      td = image_tag @badge.image_link, class: 'badge_image'
+    tr
+      th = t('description')
+      td = @badge.description
+    tr
+      th = t('rule_type')
+      td = @badge.rule_type
+    tr
+      th = t('Rule value')
+      td = @badge.rule_value
+
+br
+= link_to t('direction.back'), admin_badges_path
