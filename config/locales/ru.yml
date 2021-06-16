@@ -1,4 +1,9 @@
 ru:
+  badge: Достижения
+  earned_badge: Поздравляем!!!! Вы заработали достижение.
+  on_first_try: Пройти тест с первой попытки
+  passed_all_tests_of_category: Пройти все тесты категории
+  passed_all_tests_of_level: Пройти все тесты уровня
   test_complited: TestGuru. Вы завершили тест %{test}
   sevices:
     gist:
@@ -12,6 +17,10 @@ ru:
   result_test_true: Тест пройден. Результат %{count}% правильных ответов
   result_test_false: Тест не пройден. Результат %{count}% правильных ответов
 
+  badges:
+    index:
+      header: ваши достижения
+      all_badges: возможные достижения
   feedbacks:
     index:
       header: Обратная связь
@@ -34,6 +43,10 @@ ru:
   question: Вопрос
 
   admin:
+    badges:
+      index:
+        badge: Достижение
+        badges: Достижения
     gists:
       index:
         user: Автор
@@ -82,10 +95,12 @@ ru:
       test: Редактировать тест
       question: Редактировать вопрос
       answer: Редактировать ответ
+      badge: Редактировать достижение
     creates:
       test: Создать новый тест
       question: Создать новый вопрос
       answer: Создать ответ
+      badge: Создать новое достижение
     direction:
       back: Назад
       forward: Вперед

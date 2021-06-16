@@ -14,11 +14,23 @@ ru:
       question:
         one: Вопрос
         other: Вопросы
+      badge:
+        one: достижение
+        other: Достижения
 
     attributes:
       test:
         title: Описание теста
+        category_id: Категория
         level: Уровень
+      badge:
+        description: Описание
+        create: Создать
+        name: Название
+        image_link: ссылка на картинку
+        description: Описание
+        rule_type: Тип правила
+        rule_value: Значение правила
       user:
         first_name: Имя
         last_name: Фамилия
