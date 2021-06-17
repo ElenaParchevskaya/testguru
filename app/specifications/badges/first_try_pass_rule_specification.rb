@@ -5,7 +5,7 @@ module Badges
                                    test: @test_passage.test,
                                    user: @test_passage.user
                                   )
-      attempts.count == 1 && attempts.first.success
+      attempts.count == 1 && attempts.first.success?
     end
   end
 end
