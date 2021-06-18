@@ -14,7 +14,7 @@ class TestPassage < ApplicationRecord
   end
 
   def completed?
-    current_question.nil?
+    current_question.nil?  || times_up?
   end
 
   def success?
@@ -37,7 +37,22 @@ class TestPassage < ApplicationRecord
     test.questions.order(:id).where('id < ?', current_question.id).size + 1
   end
 
+  def times_up?
+    test.timer.nil? ? false : times_up <= Time.current
+  end
+
+  def left_time
+    return false if test.timer.nil?
+
+    time = times_up - Time.current
+    time.positive? ? time : 0
+  end
+
   private
+
+  def times_up
+    created_at + test.timer.minutes
+  end
 
   def correct_answers?(answer_ids)
     correct_answers.ids.sort == answer_ids&.map(&:to_i)&.sort
