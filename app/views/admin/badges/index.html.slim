@@ -1,0 +1,11 @@
+h1 = t('.badges')
+.row
+  .col-12.col-md-9.offset-2
+    = render 'shared/form_errors', resource: @badge
+    table.table.table-hover.table-striped
+      thead
+        tr
+      tbody
+      tbody
+        = render @badges
+    = link_to '.Создать новое достижение', new_admin_badge_path, class: 'btn btn-success'

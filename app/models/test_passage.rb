@@ -21,6 +21,14 @@ class TestPassage < ApplicationRecord
     result >= SUCCES_PERCENTAGE
   end
 
+  def mark_as_passed
+    if success?
+      update(passed: true)
+    else
+      update(passed: false)
+    end
+  end
+
   def result
     correct_questions * 100.0 / test.questions.size if completed?
   end

@@ -45,3 +45,23 @@ Answer.create!([
   { body: 'Тыква', question: questions[5] },
   { body: 'Платье было в шкафу', question: questions[5] }
 ])
+
+Badge.create!([
+  { name: 'best rookie',
+    image_link: 'https://bipbap.ru/wp-content/uploads/2019/05/86ae0b2400c92d333751c8d9a9ae68e4.png',
+    description: 'Пройти тест с первой попытки',
+    rule_type: :on_first_try,
+    rule_value: nil },
+
+  { name: 'Category',
+    image_link: 'https://bipbap.ru/wp-content/uploads/2019/05/orig-3-10.jpg',
+    description: 'Пройти все тесты категории Математика',
+    rule_type: :passed_all_tests_of_category,
+    rule_value: 'Математика' },
+
+  { name: 'Level',
+    image_link: 'https://bipbap.ru/wp-content/uploads/2019/05/orig-21.jpg',
+    description: 'Пройти все тесты 1 уровня',
+    rule_type: :passed_all_tests_of_level,
+    rule_value: 1}
+])

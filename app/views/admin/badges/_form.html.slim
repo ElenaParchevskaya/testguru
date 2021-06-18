@@ -1,0 +1,23 @@
+h1 = header_form(@badge, 'badge')
+.row
+  .col-12.col-md-8.offset-1
+    = form_with model: [:admin, @badge], local: true, class: 'action' do |form|
+      .form-group.row
+        = render 'shared/form_errors', resource: @badge
+      .form-group.row
+        = form.label :name, class: 'col-md-4 col-form-label'
+        = form.text_field :name, class: 'form-control col-md-4'
+      .form-group.row
+        = form.label :image_link, class: 'col-md-4 col-form-label'
+        = form.text_field :image_link, class: 'form-control col-md-4'
+      .form-group.row
+         = form.label :description, class: 'col-md-4 col-form-label'
+         = form.text_field :description, class: 'form-control col-md-4'
+      .form-group.row
+        = form.label :rule_type, class: 'col-md-4 col-form-label'
+        = form.collection_select :rule_type, BadgeDepartmentService::RULES, :first, :first, prompt: true
+      .form-group.row
+        = form.label :rule_value, class: 'col-md-4 col-form-label'
+        = form.text_field :rule_value, class: 'form-control col-md-4'
+      .form-group.row
+        = form.submit class: 'btn btn-success'

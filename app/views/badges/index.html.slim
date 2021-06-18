@@ -1,0 +1,17 @@
+h2 = t('.header')
+.row
+  .col-12.col-md-9.offset-2
+    table.table.table-hover.table-striped
+      thead
+        tr
+      tbody
+        = render partial: 'user_badge', collection: @user_badges
+
+h2 = t('.all_badges')
+.row
+  .col-12.col-md-9.offset-2
+    table.table.table-hover.table-striped
+      thead
+        tr
+      tbody
+        = render @badges

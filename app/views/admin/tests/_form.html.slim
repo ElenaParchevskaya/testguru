@@ -8,9 +8,10 @@ h1 = header_form(@test, 'test')
         = form.label :title, class: 'col-md-4 col-form-label'
         = form.text_field :title, class: 'form-control col-md-4'
       .form-group.row
-        = form.collection_select :category_id, Category.all, :id, :translated_title, promt: true
+        = form.label :category_id, class: 'col-md-4 col-form-label'
+        = form.collection_select :category_id, Category.all, :id, :title, promt: true
       .form-group.row
         = form.label :level, class: 'col-md-4 col-form-label'
         = form.number_field :level, class: 'form-control col-md-4'
       .form-group.row
-        = form.submit class: 'btn btn-primary'
+        = form.submit class: 'btn btn-success'

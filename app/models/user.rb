@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :gists, dependent: :destroy
   has_many :feedbacks, dependent: :delete_all
+  has_many :user_badges, dependent: :destroy
+  has_many :badges, through: :user_badges
 
   def admin?
     is_a?(Admin)
