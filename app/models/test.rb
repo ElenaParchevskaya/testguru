@@ -15,6 +15,7 @@ class Test < ApplicationRecord
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
+
   scope :all_with_category, -> (category){ joins(:category).where(categories: {title: category}) }
 
   def self.all_with_category_array(category)
