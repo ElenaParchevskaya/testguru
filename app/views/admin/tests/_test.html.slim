@@ -5,8 +5,6 @@ tr
   td = t("categories.#{test.category.title}")
   td.tests__count = test.questions.size
   td = "#{test.timer}"
-  th = link_to t('actions.edit'), edit_admin_test_path(test),
-                                  class: 'btn btn-info'
   td = button_tag t('actions.edit'), data: {test_id: test.id,
                                             state: false},
                                      class: 'btn btn-info edit'
