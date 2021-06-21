@@ -1,26 +1,31 @@
 document.addEventListener("turbolinks:load", function() {
-  var startTimer;
-  startTimer = function() {
-    var m, s, time, timer, _ref;
-    timer = document.getElementById('timer');
-    time = timer.innerHTML;
-    _ref = time.split(':'), m = _ref[0], s = _ref[1];
-    if (m <= 0 && s <= 0) {
+  let startTimer = function() {
+
+    let timer = document.getElementById('timer');
+    const min, sek, _ref;
+    const time = timer.innerHTML;
+    _ref = time.split(':'), min = _ref[0], sek = _ref[1];
+
+    if (min <= 0 && sek <= 0) {
       document.getElementById('sendAnswer').click();
       return;
     }
-    if (s === '0' || s === '00') {
-      s = 59;
-      m--;
+
+    if (sek === '0' || sek === '00') {
+      sek = 59;
+      min--;
     } else {
-      s--;
+      sek--;
     }
+
     if (s < 10) {
-      s = "0" + s;
+      sek = "0" + sek;
     }
-    timer.innerHTML = m + ":" + s;
+
+    timer.innerHTML = min + ":" + sek;
     return setTimeout(startTimer, 1000);
   };
+  
   if (document.getElementById('timer')) {
     return startTimer();
   }
