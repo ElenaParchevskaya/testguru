@@ -1,5 +1,4 @@
 ru:
-  time_left: Осталось времени
   badge: Достижения
   earned_badge: Поздравляем!!!! Вы заработали достижение.
   on_first_try: Пройти тест с первой попытки
@@ -59,6 +58,8 @@ ru:
         category: Категории
         names: Названия тестов
         count_quests: Количество вопросов
+        level: Уровень
+        timer: Таймер
 
   test: Тест
   tests:
@@ -67,8 +68,6 @@ ru:
       category: Категории
       names: Названия тестов
       count_quests: Количество вопросов
-    show:
-        time: Таймер
 
   lesson_project: Учебный проект в онлайн-школе Thinknetica
   welcome: Привет %{name}!
@@ -191,10 +190,10 @@ ru:
         other: почти %{count} лет
       half_a_minute: меньше минуты
       less_than_x_minutes:
-        few: Осталось меньше %{count} минут
-        many: Осталось меньше %{count} минут
-        one: Осталось меньше %{count} минуты
-        other: Осталось меньше %{count} минуты
+        few: меньше %{count} минут
+        many: меньше %{count} минут
+        one: меньше %{count} минуты
+        other: меньше %{count} минуты
       less_than_x_seconds:
         few: меньше %{count} секунд
         many: меньше %{count} секунд

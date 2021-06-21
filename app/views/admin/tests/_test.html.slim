@@ -4,6 +4,7 @@ tr
     = render 'form_inline', test: test == @test ? @test : test
   td = t("categories.#{test.category.title}")
   td.tests__count = test.questions.size
+  td = "#{test.level}"
   td = "#{test.timer}"
   td = button_tag t('actions.edit'), data: {test_id: test.id,
                                             state: false},
