@@ -68,6 +68,8 @@ ru:
       category: Категории
       names: Названия тестов
       count_quests: Количество вопросов
+      level: Уровень
+      timer: Таймер
 
   lesson_project: Учебный проект в онлайн-школе Thinknetica
   welcome: Привет %{name}!
