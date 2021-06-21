@@ -23,6 +23,7 @@ ru:
         title: Описание теста
         category_id: Категория
         level: Уровень
+        timer: Время на прохождение теста
       badge:
         description: Описание
         create: Создать

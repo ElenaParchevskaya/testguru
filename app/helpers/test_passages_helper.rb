@@ -10,4 +10,13 @@ module TestPassagesHelper
   def progresbar(current_question, count_question)
     current_question * 100 / count_question
   end
+
+  def time_left(time)
+    return unless time
+
+    time = time.round
+    sec = time % 60
+    min = time / 60
+    content_tag :span, "#{min}:#{sec}", id: 'timer'
+  end
 end
